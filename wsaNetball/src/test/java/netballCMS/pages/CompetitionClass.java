@@ -7,4 +7,9 @@ public class CompetitionClass {
 
 	}
 
+	public void checkWelcomeMessage(int rno) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
