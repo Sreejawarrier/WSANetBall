@@ -2,7 +2,7 @@ package netballCMS.util;
 
 import static netballCMS.wsaNetball.BaseClassNetball.testDataExcelFileName;
 
-//import java.io.FileInputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Iterator;
@@ -60,14 +60,16 @@ public class ExcelDataUtil {
 
 		// This method has two parameters: "Test data excel file name" and "Excel sheet name"
 		// It creates FileInputStream and set excel file and excel sheet to excelWBook and excelWSheet variables.
-		/*public static void setExcelFileSheet(String sheetName) throws Exception {
-			//Selection of excelpath
+			
+		public static void setExcelFileSheet(String sheetName) throws Exception {
+			//Selection of excel path
 			testDataExcelPath = currentDir + "//src//test//resources//";
 			
-			try {
-				// Open the Excel file
-				FileInputStream ExcelFile = new FileInputStream(testDataExcelPath + testDataExcelFileName);
-				excelWBook = new XSSFWorkbook(ExcelFile);
+			//Setting the TestData file path
+			 try {
+				// Open the Excel file and sheet
+				FileInputStream ExcelDataFile = new FileInputStream(testDataExcelPath + testDataExcelFileName);
+				excelWBook = new XSSFWorkbook(ExcelDataFile);
 				excelWSheet = excelWBook.getSheet(sheetName);
 			} catch (Exception e) {
 				try {
@@ -76,12 +78,7 @@ public class ExcelDataUtil {
 					e1.printStackTrace();
 				}
 			}
-		}*/
-		
-		public static void setExcelFileSheet(String sheetName) {
-			// TODO Auto-generated method stub
-			testDataExcelPath = currentDir + "//src//test//resources//";
-
+	
 		}
 		
 

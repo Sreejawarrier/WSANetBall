@@ -8,8 +8,11 @@ public class User_is_able_to_login_to_netball_application extends BaseClassNetba
 	
 	static LoginPage lp;
 	static CompetitionClass hp;
+
 	public User_is_able_to_login_to_netball_application() throws Exception {
+		
 		super();
+		
 		
 	}
 
@@ -19,6 +22,7 @@ public class User_is_able_to_login_to_netball_application extends BaseClassNetba
 		int rno;
 		ExcelDataUtil.setExcelFileSheet("Testcases");
 		rno=ExcelDataUtil.readexcel("User_is_able_to_login_into_the_netball_application");
+		System.out.println(rno);
 		initWebApp(rno);
 		lp=new LoginPage();
 		lp.Logging_in(rno);

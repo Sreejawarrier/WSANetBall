@@ -39,10 +39,10 @@ public static final String testDataExcelFileName="testdata.xlsx";
 	{
 		String userName,passwd,testcaseName;
 		
-		testcaseName=ExcelDataUtil.getCellData(1,1);
+		testcaseName=ExcelDataUtil.getCellData(i,1);
 		Log.info(testcaseName);
-		userName=ExcelDataUtil.getCellData(1,2);
-		passwd=ExcelDataUtil.getCellData(1,3);
+		userName=ExcelDataUtil.getCellData(i,2);
+		passwd=ExcelDataUtil.getCellData(i,3);
 		
 	}
 
