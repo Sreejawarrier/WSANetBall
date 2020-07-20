@@ -28,7 +28,7 @@ public class LoginPage extends BaseClassNetball{
 	public void initialising(int i) throws IOException
 	{
 		try {
-			initWebApp(i);
+			readData(i);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,8 +37,7 @@ public class LoginPage extends BaseClassNetball{
 	}
 
 	public void Logging_in(int i) throws Exception
-	{	
-	
+	{		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String username=ExcelDataUtil.getCellData(i,2);
 		String password=ExcelDataUtil.getCellData(i,3);

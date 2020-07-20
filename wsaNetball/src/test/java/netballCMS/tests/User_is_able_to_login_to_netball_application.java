@@ -7,7 +7,7 @@ import netballCMS.util.*;
 public class User_is_able_to_login_to_netball_application extends BaseClassNetball{
 	
 	static LoginPage lp;
-	static CompetitionClass hp;
+	static HomeDashboard hp;
 
 	public User_is_able_to_login_to_netball_application() throws Exception {
 		
@@ -23,10 +23,10 @@ public class User_is_able_to_login_to_netball_application extends BaseClassNetba
 		ExcelDataUtil.setExcelFileSheet("Testcases");
 		rno=ExcelDataUtil.readexcel("User_is_able_to_login_into_the_netball_application");
 		System.out.println(rno);
-		initWebApp(rno);
+		readData(rno);
 		lp=new LoginPage();
 		lp.Logging_in(rno);
-		hp=new CompetitionClass();
+		hp=new HomeDashboard();
 		hp.checkWelcomeMessage(rno);
 		
 	}

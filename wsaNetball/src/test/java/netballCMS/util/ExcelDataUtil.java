@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import org.openqa.selenium.Platform;
 public class ExcelDataUtil {
 	//Main Directory of the project
 		public static final String currentDir = System.getProperty("user.dir");
@@ -62,10 +63,14 @@ public class ExcelDataUtil {
 		// It creates FileInputStream and set excel file and excel sheet to excelWBook and excelWSheet variables.
 			
 		public static void setExcelFileSheet(String sheetName) throws Exception {
-			//Selection of excel path
-			testDataExcelPath = currentDir + "//src//test//resources//";
-			
+						
 			//Setting the TestData file path
+			if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
+				testDataExcelPath = currentDir + "//src//test//resources//";
+			} else if (Platform.getCurrent().toString().contains("WIN")) {
+				testDataExcelPath = currentDir + "\\src\\test\\resources\\";
+			}
+				
 			 try {
 				// Open the Excel file and sheet
 				FileInputStream ExcelDataFile = new FileInputStream(testDataExcelPath + testDataExcelFileName);
@@ -80,6 +85,33 @@ public class ExcelDataUtil {
 			}
 	
 		}
+		
+		/*public static void setExcelFileSheet(String sheetName) throws Exception {
+			//Setting the TestData file path
+			if (Platform.getCurrent().toString().equalsIgnoreCase(“MAC”)) {
+				testDataExcelPath = currentDir + “//src//test//resources//“;
+			} else if (Platform.getCurrent().toString().contains(“WIN”)) {
+				testDataExcelPath = currentDir + “\\src\\test\\resources\\“;
+			}
+			try {
+				// Open the Excel file and sheet
+				FileInputStream ExcelFile = new FileInputStream(testDataExcelPath + testDataExcelFileName);
+				excelWBook = new XSSFWorkbook(ExcelFile);
+				excelWSheet = excelWBook.getSheet(sheetName);
+			} catch (Exception e) {
+				try {
+					throw (e);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}*/
+
+
+
+
+
+
 		
 
 		//This method reads the test data from the Excel cell.

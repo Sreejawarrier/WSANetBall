@@ -18,10 +18,10 @@ WebDriver driver;
 String driverPath = "C:\\ComplyBook_Selenium\\newChromeDriver\\chromedriver.exe";
 public static final String currentDir = System.getProperty("user.dir");
 public static final String testDataExcelFileName="testdata.xlsx";
+public static String userName, passwd, testcaseName;
 
 	public BaseClassNetball() throws Exception
 	{
-		ExcelDataUtil.setExcelFileSheet("TestCases");
 		
 	}
 	
@@ -35,15 +35,21 @@ public static final String testDataExcelFileName="testdata.xlsx";
 			}
 	
 	
-	public void initWebApp(int i) throws Exception
+	public void readData(int i) throws Exception
 	{
-		String userName,passwd,testcaseName;
+		//String userName, passwd, testcaseName;
 		
+		//ExcelDataUtil.setExcelFileSheet("TestCases");
 		testcaseName=ExcelDataUtil.getCellData(i,1);
 		Log.info(testcaseName);
 		userName=ExcelDataUtil.getCellData(i,2);
 		passwd=ExcelDataUtil.getCellData(i,3);
 		
+	}
+	
+	public void closeApp()
+	{
+		driver.quit();
 	}
 
 	}

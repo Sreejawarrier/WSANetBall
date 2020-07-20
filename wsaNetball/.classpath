@@ -25,7 +25,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/HotelApp/lib/selenium-server-standalone-3.141.59.jar"/>
 	<classpathentry kind="lib" path="C:/Users/sreej/.m2/repository/org/apache/poi/poi-ooxml/4.1.1/poi-ooxml-4.1.1.jar" sourcepath="C:/Users/sreej/.m2/repository/org/apache/poi/poi-ooxml/4.1.1/poi-ooxml-4.1.1-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
